@@ -7,6 +7,8 @@ const port = process.env.BACKEND_PORT ? Number(process.env.PORT) : 3000;
 (async () => {
   const app = express();
   const db = await connectToDatabase();
+  app.set('db', db);
+
   app.listen(port, host, () => {
     console.info(`Server is running at http://${host}:${port}`);
   });
