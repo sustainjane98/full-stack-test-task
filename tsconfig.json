@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./apps/full-stack-test-task"
+    },
+    {
+      "path": "./apps/backend"
     }
   ]
 }
