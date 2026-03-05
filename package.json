@@ -63,6 +63,7 @@
   },
   "workspaces": [
     "apps/*",
-    "libs/data/database"
+    "libs/data/database",
+    "libs/business/api/shopping-items"
   ]
 }
