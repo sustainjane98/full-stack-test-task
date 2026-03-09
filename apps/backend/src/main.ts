@@ -1,6 +1,6 @@
 import { connectToDatabase } from '@full-stack-test-task/database';
 import { router } from '@full-stack-test-task/shopping-items';
-import express from 'express';
+import express, { json } from 'express';
 import cors from 'cors';
 
 const host = process.env.BACKEND_HOST ?? 'localhost';
@@ -17,6 +17,7 @@ const port = process.env.BACKEND_PORT ? Number(process.env.PORT) : 3000;
   };
 
   app.use(cors(corsOptions));
+  app.use(json());
 
   app.use(router);
 

@@ -17,4 +17,10 @@ export const customTheme = createTheme({
       },
     },
   },
+  checkbox: {
+    base: 'border-2 size-6 bg-transparent',
+    color: {
+      blue: 'border-cyan-700  checked:bg-cyan-700 focus:ring-0',
+    },
+  },
 });

@@ -27,7 +27,7 @@ export const AddItemSection: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="grid grid-cols-[1fr_5rem] grid-rows-2 items-stretch gap-2"
+      className="grid grid-cols-[1fr_5rem] grid-rows-2 items-stretch gap-3"
     >
       <TextInput
         placeholder="Füge ein neues Element hinzu..."
