@@ -17,6 +17,7 @@
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^4.43.0",
+    "@tanstack/react-query-devtools": "^4.43.0",
     "express": "^4.21.2",
     "flowbite-react": "^0.12.17",
     "mongodb": "^7.1.0",
