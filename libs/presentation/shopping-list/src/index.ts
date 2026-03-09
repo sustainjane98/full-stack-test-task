@@ -1,11 +1,11 @@
-export { ShoppingListItem } from './lib/shopping-list-item';
+export { ShoppingListItem } from './lib/components/shopping-list-item';
 
-export type { Props as ShoppingListItemProps } from './lib/shopping-list-item';
+export type { Props as ShoppingListItemProps } from './lib/components/shopping-list-item';
 
-export { ShoppingListContainer } from './lib/shopping-list-container';
+export { ShoppingListContainer } from './lib/components/shopping-list-container';
 
-export { AddItemSection } from './lib/add-item-section';
+export { AddItemSection } from './lib/components/add-item-section';
 
-export { Header } from './lib/header';
+export { Header } from './lib/components/header';
 
-export { ShoppingList } from './lib/shopping-list';
+export { ShoppingList } from './lib/components/shopping-list';
