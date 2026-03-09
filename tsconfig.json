@@ -4,7 +4,7 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/full-stack-test-task"
+      "path": "./apps/frontend"
     },
     {
       "path": "./apps/backend"
@@ -14,6 +14,9 @@
     },
     {
       "path": "./libs/business/api/shopping-items"
+    },
+    {
+      "path": "./libs/presentation/shopping-list"
     }
   ]
 }
