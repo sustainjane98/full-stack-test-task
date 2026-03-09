@@ -1,4 +1,5 @@
 import { connectToDatabase } from '@full-stack-test-task/database';
+import { router } from '@full-stack-test-task/shopping-items';
 import express from 'express';
 
 const host = process.env.BACKEND_HOST ?? 'localhost';
@@ -8,6 +9,8 @@ const port = process.env.BACKEND_PORT ? Number(process.env.PORT) : 3000;
   const app = express();
   const db = await connectToDatabase();
   app.set('db', db);
+
+  app.use(router);
 
   app.listen(port, host, () => {
     console.info(`Server is running at http://${host}:${port}`);

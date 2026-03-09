@@ -12,7 +12,7 @@
         "defaultConfiguration": "production",
         "options": {
           "platform": "node",
-          "outputPath": "apps/backend/dist",
+          "outputPath": "dist/apps/backend",
           "format": [
             "cjs"
           ],

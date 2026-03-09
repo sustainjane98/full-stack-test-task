@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "../../dist",
     "module": "nodenext",
     "types": ["node"],
     "rootDir": "src",
@@ -13,6 +13,9 @@
   "references": [
     {
       "path": "../../libs/data/database/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/business/api/shopping-items/tsconfig.lib.json"
     }
   ]
 }

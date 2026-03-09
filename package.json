@@ -11,10 +11,12 @@
     "frontend:build": "nx run @full-stack-test-task/frontend:build",
     "frontend:dev": "nx run @full-stack-test-task/frontend:dev",
     "frontend:serve": "nx run @full-stack-test-task/frontend:serve",
-    "postinstall": "flowbite-react register"
+    "postinstall": "flowbite-react register",
+    "nx reset": "nx reset"
   },
   "private": true,
   "dependencies": {
+    "@tanstack/react-query": "^4.43.0",
     "express": "^4.21.2",
     "flowbite-react": "^0.12.17",
     "mongodb": "^7.1.0",

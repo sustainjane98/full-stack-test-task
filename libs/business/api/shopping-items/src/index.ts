@@ -1,1 +1,1 @@
-export * from './lib/shopping-items.js';
+export { default as router } from './lib/routes/index.route';
