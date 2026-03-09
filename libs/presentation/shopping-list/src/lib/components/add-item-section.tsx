@@ -27,14 +27,19 @@ export const AddItemSection: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="grid grid-cols-[1fr_5rem] grid-rows-2 gap-2"
+      className="grid grid-cols-[1fr_5rem] grid-rows-2 items-stretch gap-2"
     >
       <TextInput
         placeholder="Füge ein neues Element hinzu..."
         className="w-full"
         {...register('name')}
       />
-      <Button onClick={() => reset()} type="button" color="red">
+      <Button
+        onClick={() => reset()}
+        type="button"
+        color="red"
+        className="h-full"
+      >
         <TrashIcon className="size-6 text-white" />
       </Button>
       <Button type="submit" size="lg" className="col-span-2 flex gap-2">
