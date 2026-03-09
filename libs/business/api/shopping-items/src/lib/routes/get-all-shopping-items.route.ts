@@ -4,7 +4,7 @@ import { Db } from 'mongodb';
 
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.get('/items', async (req, res) => {
   const db: Db = req.app.get('db');
   const shoppingItemsCollection = new ShoppingItemService(db);
   const items = await shoppingItemsCollection.getAllItems();

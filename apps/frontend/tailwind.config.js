@@ -11,6 +11,7 @@ module.exports = {
     ),
     ...createGlobPatternsForDependencies(__dirname),
     '../../.flowbite-react/class-list.json',
+    ".flowbite-react/class-list.json"
   ],
   theme: {
     extend: {},
