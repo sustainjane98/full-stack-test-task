@@ -19,8 +19,13 @@ export const ShoppingList: React.FC = () => {
         {isLoading ? (
           <Spinner color="info" className="size-16" />
         ) : (
-          items?.map(({ name, bought }) => (
-            <ShoppingListItem name={name} bought={bought} />
+          items?.map(({ name, bought, _id }) => (
+            <ShoppingListItem
+              key={name}
+              name={name}
+              bought={bought}
+              id={_id ?? ''}
+            />
           ))
         )}
       </ShoppingListContainer>

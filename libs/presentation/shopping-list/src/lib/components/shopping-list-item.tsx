@@ -2,8 +2,10 @@ import { Card, Button, Checkbox } from 'flowbite-react';
 import React from 'react';
 import classNames from 'classnames';
 import { TrashIcon } from '@heroicons/react/24/solid';
+import { useDeleteItem } from '../hooks/use-delete-item.hook';
 
 export interface Props {
+  id: string;
   name: string;
   bought: boolean;
 }
@@ -13,7 +15,9 @@ export interface Props {
  * @author Jane Will
  * @version 0.1
  */
-export const ShoppingListItem: React.FC<Props> = ({ name, bought }) => {
+export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
+  const { mutate: deleteItem } = useDeleteItem();
+
   return (
     <Card>
       <div className="flex flex-row gap-4 w-full items-center">
@@ -25,7 +29,7 @@ export const ShoppingListItem: React.FC<Props> = ({ name, bought }) => {
         >
           {name}
         </span>
-        <Button color="red">
+        <Button onClick={() => deleteItem(id)} color="red">
           <TrashIcon className="size-6 text-white" />
         </Button>
       </div>

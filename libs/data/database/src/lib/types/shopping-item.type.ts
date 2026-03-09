@@ -1,7 +1,5 @@
-import { ObjectId } from 'mongodb';
-
 export interface ShoppingItem {
-  _id?: ObjectId;
+  _id?: string;
   name: string;
   bought: boolean;
   createdAt: Date;
