@@ -29,7 +29,7 @@ export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
           checked={bought}
         />
         <span
-          className={classNames('font-normal flex-1 text-2xl', {
+          className={classNames('font-normal flex-1 text-xl', {
             'line-through': bought,
           })}
         >

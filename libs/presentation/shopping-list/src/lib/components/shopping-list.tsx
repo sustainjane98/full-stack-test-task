@@ -15,7 +15,7 @@ export const ShoppingList: React.FC = () => {
   const { data: items, isLoading } = useItems();
 
   return (
-    <div className="flex flex-col min-h-[calc(100dvh-(4rem+2.5rem))] px-4 pb-8  max-w-2xl mx-auto">
+    <div className="flex flex-col min-h-[calc(100dvh-(4rem+2.5rem))] px-4 pb-8 max-w-2xl mx-auto gap-8">
       <ShoppingListContainer isLoading={isLoading}>
         {isLoading ? (
           <Spinner color="info" className="size-16" />

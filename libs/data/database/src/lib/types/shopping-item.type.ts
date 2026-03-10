@@ -7,4 +7,4 @@ export interface ShoppingItem {
   createdAt: Date;
 }
 
-export type ShoppingItemFrontend = Omit<ShoppingItem, '_id'> & { id: string };
+export type ShoppingItemFrontend = Omit<ShoppingItem, '_id'> & { _id: string };

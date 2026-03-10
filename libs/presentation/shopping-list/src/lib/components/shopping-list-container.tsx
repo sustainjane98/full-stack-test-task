@@ -14,11 +14,16 @@ export const ShoppingListContainer: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={classNames('flex-1 flex flex-col gap-2', {
-        'items-center justify-center': isLoading,
-      })}
+      className={classNames(
+        'flex-1 flex flex-col gap-2 relative overflow-y-auto overflow-x-hidden',
+        {
+          'items-center justify-center': isLoading,
+        },
+      )}
     >
-      {children}
+      <div className="absolute top-0 left-0 right-0 flex flex-col gap-2">
+        {children}
+      </div>
     </div>
   );
 };

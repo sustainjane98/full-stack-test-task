@@ -32,6 +32,7 @@ export const AddItemSection: React.FC = () => {
       <TextInput
         placeholder="Füge ein neues Element hinzu..."
         className="w-full"
+        autoFocus
         {...register('name')}
       />
       <Button
