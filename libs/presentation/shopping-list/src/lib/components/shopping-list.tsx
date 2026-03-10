@@ -4,6 +4,7 @@ import { AddItemSection } from './add-item-section';
 import { useItems } from '../hooks/use-items.hook';
 import { ShoppingListItem } from './shopping-list-item';
 import { Spinner } from 'flowbite-react';
+import { EmptyCart } from './empty-cart';
 
 /**
  * An ShoppingList React Component.
@@ -18,6 +19,8 @@ export const ShoppingList: React.FC = () => {
       <ShoppingListContainer isLoading={isLoading}>
         {isLoading ? (
           <Spinner color="info" className="size-16" />
+        ) : items?.length === 0 ? (
+          <EmptyCart />
         ) : (
           items?.map(({ name, bought, _id }) => (
             <ShoppingListItem
