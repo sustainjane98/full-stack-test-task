@@ -22,10 +22,10 @@ export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
 
   return (
     <Card>
-      <div className="flex flex-row gap-4 w-full items-center">
+      <div className="flex flex-row gap-4 w-full items-center -m-2">
         <Checkbox
           onClick={() => toggleBought(id)}
-          color="blue"
+          color="cyan"
           checked={bought}
         />
         <span
