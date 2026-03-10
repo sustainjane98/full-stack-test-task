@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import getAllShoppingItemsRoute from './get-all-shopping-items.route.js';
-import createShoppingItemRoute from './create-shopping-items.route.js';
-import deleteShoppingItemRoute from './delete-shopping-item.route.js';
+import { getAllShoppingItems } from './get-all-shopping-items.route';
+import { createShoppingItem } from './create-shopping-items.route';
+import { deleteShoppingItem } from './delete-shopping-item.route';
 const router = Router();
 
-router.use(getAllShoppingItemsRoute);
-router.use(createShoppingItemRoute);
-router.use(deleteShoppingItemRoute);
+router.get('/items', getAllShoppingItems);
+router.post('/items', createShoppingItem);
+router.delete('/items/:id', deleteShoppingItem);
 
 export default router;

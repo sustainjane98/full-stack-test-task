@@ -1,4 +1,4 @@
-import { ShoppingItem } from '@full-stack-test-task/database';
+import { ShoppingItemFrontend } from '@full-stack-test-task/database';
 import backendClient from '../configs/backend-client';
 import { useQuery } from '@tanstack/react-query';
 
@@ -12,6 +12,6 @@ export const useItems = () =>
         throw new Error('Failed to fetch items');
       }
 
-      return (await result.json()) as ShoppingItem[];
+      return (await result.json()) as ShoppingItemFrontend[];
     },
   });

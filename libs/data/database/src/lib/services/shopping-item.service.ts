@@ -1,4 +1,4 @@
-import { Collection, Db } from 'mongodb';
+import { Collection, Db, ObjectId } from 'mongodb';
 import { ShoppingItem } from '../types/shopping-item.type';
 
 export class ShoppingItemService {
@@ -22,14 +22,15 @@ export class ShoppingItemService {
   }
 
   public async deleteItem(id: string) {
-    await this.collection.deleteOne({ _id: id });
+    await this.collection.deleteOne({ _id: new ObjectId(id) });
   }
 
   public async toggleItemBought(id: string) {
-    const item = await this.collection.findOne({ _id: id });
+    const objectId = new ObjectId(id);
+    const item = await this.collection.findOne({ _id: objectId });
     if (item) {
       await this.collection.updateOne(
-        { _id: id },
+        { _id: objectId },
         { $set: { bought: !item.bought } },
       );
     }

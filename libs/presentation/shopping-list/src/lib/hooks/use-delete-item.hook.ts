@@ -1,15 +1,15 @@
 import { useMutation } from '@tanstack/react-query';
 import { queryClient } from '../configs/query-client';
+import backendClient from '../configs/backend-client';
 
 export const useDeleteItem = () =>
   useMutation({
     mutationFn: async (id: string) => {
-      const result = await fetch('/items', {
+      const result = await backendClient(`/items/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id }),
       });
 
       if (!result.ok) {
