@@ -1,5 +1,14 @@
 # Full Stack Test Task
 
+# How to start
+
+1. git clone
+2. npm install
+3. npm run database:start (Docker required)
+4. npm run backend:build && npm run backend:serve (Backend is running now)
+5. npm run frontend:build && npm run frontend:serve (Frontend is running as well)
+6. Open http://localhost:4200 to interact with the Frontend
+
 # Ziel
 
 Erstelle eine einfache Full Stack Anwendung (React + TypeScript + Express + MongoDB / Mongoose), mit der Benutzer Produkte zur Einkaufsliste hinzufügen, abhaken und löschen können.
