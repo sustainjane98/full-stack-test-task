@@ -1,6 +1,6 @@
 {
   "name": "@full-stack-test-task/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "database:start": "docker compose -p full-stack-test-task -f .docker/docker-compose.local.yaml up -d",
