@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import backendClient from '../configs/backend-client';
-import { queryClient } from '../configs/query-client';
+import { ShoppingItemFrontend } from '@full-stack-test-task/database';
 
 export const useAddItem = () =>
   useMutation({
@@ -16,8 +16,7 @@ export const useAddItem = () =>
       if (!result.ok) {
         throw new Error('Failed to add item');
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['all-items'] });
+
+      return (await result.json()) as ShoppingItemFrontend;
     },
   });

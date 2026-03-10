@@ -11,6 +11,6 @@ export const createShoppingItem: RequestHandler = async (req, res) => {
 
   const db: Db = req.app.get('db');
   const shoppingItemsCollection = new ShoppingItemService(db);
-  const id = await shoppingItemsCollection.addItem(name);
-  res.json(id);
+  const result = await shoppingItemsCollection.addItem(name);
+  res.json(result);
 };

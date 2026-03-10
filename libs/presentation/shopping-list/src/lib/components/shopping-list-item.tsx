@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { TrashIcon } from '@heroicons/react/24/solid';
 import { useDeleteItem } from '../hooks/use-delete-item.hook';
 import { useToggleBought } from '../hooks/use-toggle-bought';
+import { useShoppingListStore } from '@full-stack-test-task/state';
 
 export interface Props {
   id: string;
@@ -19,14 +20,19 @@ export interface Props {
 export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
   const { mutate: deleteItem } = useDeleteItem();
   const { mutate: toggleBought } = useToggleBought();
+  const { deleteItem: deleteItemStore, toggleBought: toggleBoughtStore } =
+    useShoppingListStore();
 
   return (
     <Card>
       <div className="flex flex-row gap-4 w-full items-center -m-2">
         <Checkbox
-          onClick={() => toggleBought(id)}
+          onClick={() => {
+            toggleBoughtStore(id);
+            toggleBought(id);
+          }}
           color="cyan"
-          checked={bought}
+          defaultChecked={bought}
         />
         <span
           className={classNames('font-normal flex-1 text-xl', {
@@ -35,7 +41,13 @@ export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
         >
           {name}
         </span>
-        <Button onClick={() => deleteItem(id)} color="red">
+        <Button
+          onClick={() => {
+            deleteItemStore(id);
+            deleteItem(id);
+          }}
+          color="red"
+        >
           <TrashIcon className="size-6 text-white" />
         </Button>
       </div>

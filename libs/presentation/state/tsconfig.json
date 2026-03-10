@@ -4,9 +4,6 @@
   "references": [
     {
       "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "../state/tsconfig.lib.json"
     }
   ],
   "extends": "../../../tsconfig.base.json"

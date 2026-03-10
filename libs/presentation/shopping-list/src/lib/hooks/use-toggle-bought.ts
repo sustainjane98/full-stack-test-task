@@ -1,6 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
 import backendClient from '../configs/backend-client';
-import { queryClient } from '../configs/query-client';
 
 export const useToggleBought = () =>
   useMutation({
@@ -12,8 +11,5 @@ export const useToggleBought = () =>
       if (!result.ok) {
         throw new Error('Failed to toggle item');
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['all-items'] });
     },
   });

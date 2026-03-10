@@ -13,12 +13,16 @@ export class ShoppingItemService {
   }
 
   public async addItem(name: string) {
-    const result = await this.collection.insertOne({
+    const insertEntry = {
       name,
       bought: false,
       createdAt: new Date(),
-    });
-    return result.insertedId;
+    };
+    const result = await this.collection.insertOne(insertEntry);
+    return {
+      ...insertEntry,
+      _id: result.insertedId,
+    };
   }
 
   public async deleteItem(id: string) {

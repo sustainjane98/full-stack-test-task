@@ -32,6 +32,9 @@
   "references": [
     {
       "path": "../../data/database/tsconfig.lib.json"
+    },
+    {
+      "path": "../state/tsconfig.lib.json"
     }
   ]
 }

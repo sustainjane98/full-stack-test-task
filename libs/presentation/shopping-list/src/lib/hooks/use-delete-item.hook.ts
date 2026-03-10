@@ -1,5 +1,4 @@
 import { useMutation } from '@tanstack/react-query';
-import { queryClient } from '../configs/query-client';
 import backendClient from '../configs/backend-client';
 
 export const useDeleteItem = () =>
@@ -15,9 +14,5 @@ export const useDeleteItem = () =>
       if (!result.ok) {
         throw new Error('Failed to delete item');
       }
-    },
-    onSuccess: () => {
-      // Invalidate the items query to refetch the updated list
-      queryClient.invalidateQueries({ queryKey: ['all-items'] });
     },
   });

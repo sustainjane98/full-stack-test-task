@@ -7,7 +7,7 @@
     "database:stop": "docker compose -p full-stack-test-task -f .docker/docker-compose.local.yaml down",
     "backend:build": "nx run @full-stack-test-task/backend:build:production",
     "backend:dev": "nx run @full-stack-test-task/backend:serve:development",
-    "backend:serve": "nx run @full-stack-test-task/backend:serve:production",
+    "backend:serve": "nx run full-stack-test-task/state-stack-test-task/backend:serve:production",
     "frontend:build": "nx run @full-stack-test-task/frontend:build",
     "frontend:dev": "nx run @full-stack-test-task/frontend:dev",
     "frontend:serve": "nx run @full-stack-test-task/frontend:serve",
@@ -25,7 +25,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.71.2",
-    "react-router-dom": "6.30.3"
+    "react-router-dom": "6.30.3",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -75,6 +76,7 @@
     "apps/*",
     "libs/data/database",
     "libs/business/api/shopping-items",
-    "libs/presentation/*"
+    "libs/presentation/state",
+    "libs/presentation/shopping-list"
   ]
 }

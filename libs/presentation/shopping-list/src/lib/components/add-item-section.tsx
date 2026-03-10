@@ -3,6 +3,7 @@ import React from 'react';
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAddItem } from '../hooks/use-add-item.hook';
+import { useShoppingListStore } from '@full-stack-test-task/state';
 
 type Inputs = {
   name: string;
@@ -16,12 +17,14 @@ type Inputs = {
 export const AddItemSection: React.FC = () => {
   const { register, handleSubmit, reset } = useForm<Inputs>();
 
-  const { mutate: addItem } = useAddItem();
+  const { mutateAsync: addItem } = useAddItem();
+  const { addItem: addItemStore } = useShoppingListStore();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    addItem(data.name, {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const res = await addItem(data.name, {
       onSuccess: () => reset(),
     });
+    addItemStore(res);
   };
 
   return (
