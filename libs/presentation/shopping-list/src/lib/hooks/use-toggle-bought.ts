@@ -2,19 +2,15 @@ import { useMutation } from '@tanstack/react-query';
 import backendClient from '../configs/backend-client';
 import { queryClient } from '../configs/query-client';
 
-export const useAddItem = () =>
+export const useToggleBought = () =>
   useMutation({
-    mutationFn: async (name: string) => {
-      const result = await backendClient('/items', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name }),
+    mutationFn: async (id: string) => {
+      const result = await backendClient(`/items/${id}`, {
+        method: 'PUT',
       });
 
       if (!result.ok) {
-        throw new Error('Failed to add item');
+        throw new Error('Failed to toggle item');
       }
     },
     onSuccess: () => {
