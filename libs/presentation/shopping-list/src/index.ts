@@ -11,5 +11,3 @@ export { Header } from './lib/components/header';
 export { ShoppingList } from './lib/components/shopping-list';
 
 export { customTheme } from './lib/configs/flowbite-react.config';
-
-export { queryClient } from './lib/configs/query-client';

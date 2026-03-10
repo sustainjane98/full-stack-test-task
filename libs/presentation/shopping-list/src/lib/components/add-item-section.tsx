@@ -17,14 +17,13 @@ type Inputs = {
 export const AddItemSection: React.FC = () => {
   const { register, handleSubmit, reset } = useForm<Inputs>();
 
-  const { mutateAsync: addItem } = useAddItem();
+  const addItem = useAddItem();
   const { addItem: addItemStore } = useShoppingListStore();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const res = await addItem(data.name, {
-      onSuccess: () => reset(),
-    });
+    const res = await addItem(data.name);
     addItemStore(res);
+    reset();
   };
 
   return (

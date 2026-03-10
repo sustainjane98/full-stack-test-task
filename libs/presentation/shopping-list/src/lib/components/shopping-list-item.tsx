@@ -18,8 +18,8 @@ export interface Props {
  * @version 0.1
  */
 export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
-  const { mutate: deleteItem } = useDeleteItem();
-  const { mutate: toggleBought } = useToggleBought();
+  const deleteItem = useDeleteItem();
+  const toggleBought = useToggleBought();
   const { deleteItem: deleteItemStore, toggleBought: toggleBoughtStore } =
     useShoppingListStore();
 
@@ -27,9 +27,9 @@ export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
     <Card>
       <div className="flex flex-row gap-4 w-full items-center -m-2">
         <Checkbox
-          onClick={() => {
+          onChange={async () => {
             toggleBoughtStore(id);
-            toggleBought(id);
+            await toggleBought(id);
           }}
           color="cyan"
           defaultChecked={bought}
@@ -42,9 +42,9 @@ export const ShoppingListItem: React.FC<Props> = ({ name, bought, id }) => {
           {name}
         </span>
         <Button
-          onClick={() => {
+          onClick={async () => {
             deleteItemStore(id);
-            deleteItem(id);
+            await deleteItem(id);
           }}
           color="red"
         >

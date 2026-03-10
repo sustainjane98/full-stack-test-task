@@ -7,7 +7,7 @@
     "database:stop": "docker compose -p full-stack-test-task -f .docker/docker-compose.local.yaml down",
     "backend:build": "nx run @full-stack-test-task/backend:build:production",
     "backend:dev": "nx run @full-stack-test-task/backend:serve:development",
-    "backend:serve": "nx run full-stack-test-task/state-stack-test-task/backend:serve:production",
+    "backend:serve": "nx run @sfull-stack-test-task/backend:serve:production",
     "frontend:build": "nx run @full-stack-test-task/frontend:build",
     "frontend:dev": "nx run @full-stack-test-task/frontend:dev",
     "frontend:serve": "nx run @full-stack-test-task/frontend:serve",
@@ -16,8 +16,6 @@
   },
   "private": true,
   "dependencies": {
-    "@tanstack/react-query": "^4.43.0",
-    "@tanstack/react-query-devtools": "^4.43.0",
     "cors": "^2.8.6",
     "express": "^4.21.2",
     "flowbite-react": "^0.12.17",
